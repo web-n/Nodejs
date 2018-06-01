@@ -6,14 +6,18 @@ var app = http.createServer(function(request,response){
     var _url = request.url;
     var queryData = url.parse(_url, true).query;
     var title = queryData.id;
-    if(_url == '/'){
+    var filePath = queryData.id;
+    if(_url === '/'){
       title = 'Welcome';
+      filePath = 'welcome';
     }
+    /*
     if(_url == '/favicon.ico'){
       return response.writeHead(404);
     }
+    */
     response.writeHead(200);
-    fs.readFile(`data/${queryData.id}`, 'utf8', function(err, description){
+    fs.readFile(`data/${filePath}`, 'utf8', function(err, description){
       var template = `
       <!doctype html>
       <html>
