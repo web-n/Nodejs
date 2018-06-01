@@ -11,12 +11,11 @@ var app = http.createServer(function(request,response){
       title = 'Welcome';
       filePath = 'welcome';
     }
-    if(_url === '/favicon.ico'){
-      response.writeHead(404, {"Content-Type": "text/plain"});
-      response.write("404 Not found");
-      response.end();
-      return;
+    /*
+    if(_url == '/favicon.ico'){
+      return response.writeHead(404);
     }
+    */
     response.writeHead(200);
     fs.readFile(`data/${filePath}`, 'utf8', function(err, description){
       var template = `
