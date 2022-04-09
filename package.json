@@ -7,6 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "dev": "nodemon nodejs/cookie.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,10 @@
   },
   "homepage": "https://github.com/web-n/Nodejs#readme",
   "dependencies": {
-    "sanitize-html": "^1.18.2"
+    "cookie": "^0.4.2",
+    "sanitize-html": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
